@@ -6,9 +6,9 @@ Codebase to practice Linear and Logistic Regression using scikit and the Titanic
 * Logistic Regression w scikit
 
 ## To Do
-- [ ] Make conda env
-- [ ] ~~Use environment.yml file, see if that resolves requirement.txt issues as well as something like poetry or pixi~~ (Not doing this)
-- [ ] Python version? ✔️ (3.12.7)
+- [x] Make conda env
+  - [ ] ~~Use environment.yml file, see if that resolves requirement.txt issues as well as something like poetry or pixi~~ (Not doing this)
+  - [x] Python version? (3.12.7)
 - [ ] Install packages
-- [ ] Scikit ✔️
-- [ ] Other? See as you go
+  - [x] Scikit
+  - [ ] Other? See as you go
