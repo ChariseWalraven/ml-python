@@ -12,3 +12,8 @@ Codebase to practice Linear and Logistic Regression using scikit and the Titanic
 - [ ] Install packages
   - [x] Scikit
   - [ ] Other? See as you go
+- [x] Add dataset
+
+
+## Dataset
+[Titanic](https://www.kaggle.com/datasets/heptapod/titanic)
