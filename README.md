@@ -16,6 +16,9 @@ Codebase to practice Linear and Logistic Regression using scikit and the Titanic
 - [ ] Find better dataset for linear regression (titanic good for logistic regression)
 - [ ] Use sk-learn to run linear regression on dataset
 
+# Notes & Tips
+- [sklearn has california housing dataset](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.fetch_california_housing.html#sklearn.datasets.fetch_california_housing) (backup lin. reg)
+
 
 ## Dataset
 [Titanic](https://www.kaggle.com/datasets/heptapod/titanic)
