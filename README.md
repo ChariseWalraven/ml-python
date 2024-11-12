@@ -11,10 +11,10 @@ Codebase to practice Linear and Logistic Regression using scikit and the Titanic
   - [x] Python version? (3.12.7)
 - [ ] Install packages
   - [x] Scikit
-  - [ ] Other? See as you go
+  - [x] Other? See as you go
 - [x] Add dataset
+- [ ] Find better dataset for linear regression (titanic good for logistic regression)
 - [ ] Use sk-learn to run linear regression on dataset
-  - [ ] Age v died
 
 
 ## Dataset
