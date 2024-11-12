@@ -14,7 +14,7 @@ Codebase to practice Linear and Logistic Regression using scikit and the Titanic
   - [ ] Other? See as you go
 - [x] Add dataset
 - [ ] Use sk-learn to run linear regression on dataset
-  - [ ] Age v died? Think so
+  - [ ] Age v died
 
 
 ## Dataset
