@@ -3,3 +3,5 @@
 # Name                    Version                   Build  Channel
 
 pandas~=2.2.2
+matplotlib~=3.9.2
+scikit-learn~=1.5.1
