@@ -1,3 +1,5 @@
+from cProfile import label
+
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn import linear_model
@@ -42,12 +44,13 @@ print("Mean squared error: %.2f" % mean_squared_error(y_test, libraries_y_predic
 # The coefficient of determination: 1 is perfect prediction
 print("Coefficient of determination (r2 score): %.2f" % r2_score(y_test, libraries_y_predictions))
 
-plt.scatter(x_test, y_test, color="black")
-plt.scatter(x_train, y_train, color="blue")
-plt.plot(x_test, libraries_y_predictions, color="blue", linewidth=3)
+plt.scatter(x_test, y_test, color="black", label="Test data")
+plt.scatter(x_train, y_train, color="blue", label="Training data")
+plt.plot(x_test, libraries_y_predictions, color="blue", linewidth=3, label="predictions (Linear Regression)")
 
-plt.xticks(())
-plt.yticks(())
+plt.xlabel(cols[0])
+plt.ylabel(cols[1])
+plt.title("# librarians vs libraries per region in Poland")
 
 plt.show()
 
