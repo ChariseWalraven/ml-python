@@ -3,12 +3,6 @@ import matplotlib.pyplot as plt
 from sklearn import linear_model
 from sklearn.metrics import mean_squared_error, r2_score
 
-def plot_columns(columns):
-    """Plots the given 2 columns on a scatter plot."""
-    f1_f2 = df[columns]
-    f1_f2.plot(kind="scatter", x=columns[0], y=columns[1])
-    plt.show()
-
 df = pd.read_csv('data/libraries_in_Poland.csv', sep=";")
 
 # Select features to use for input/prediction
@@ -48,5 +42,3 @@ plt.ylabel(cols[1])
 plt.title("# librarians vs libraries per region in Poland")
 
 plt.show()
-
-# plot_columns(cols)
