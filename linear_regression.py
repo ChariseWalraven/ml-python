@@ -37,43 +37,40 @@ y_test = libraries_y[-3:]
 # # how accurate the predictions are
 # print("Coefficient of determination (r2 score): %.2f" % r2_score(y_test, libraries_y_predictions))
 
-
 # try to plot all the subplots maybe just start with them vertically stacked? easier, no?
-cols = 3
-rows = math.ceil(len(x_cols) / cols)
-col = 0
-row = 0
+def plot_features():
+    cols = 3
+    rows = math.ceil(len(x_cols) / cols)
+    col = 0
+    row = 0
+    fig, axes = plt.subplots(rows, cols)
+    fig.suptitle('Feature n and number of readers')
+    # add space so you can see the titles of the axes properly
+    plt.subplots_adjust(hspace=0.5, wspace=0.5)
+    num_extra_axes = axes.size - len(x_cols)
+    if num_extra_axes > 0:
+        print(f'{num_extra_axes} extra axes/axis added')
+        for ax in axes[-1][-num_extra_axes:]:
+            fig.delaxes(ax)
+    for i, col_name in enumerate(x_cols):
 
-fig, axes = plt.subplots(rows, cols)
-fig.suptitle('Feature n and number of readers')
+        print("i:", i, "row:", row, "col:", col, col_name)
+        ax: plt.Axes = axes[row, col]
+        ax.scatter(df[[col_name]], df[[y_col]])
+        ax.set_xlabel(col_name)
+        ax.set_ylabel(y_col)
 
-# add space so you can see the titles of the axes properly
-plt.subplots_adjust(hspace=0.5, wspace=0.5)
+        if col == 0:
+            col = 1
+        elif col == 1:
+            col = 2
+        else:
+            row += 1
+            col = 0
+    # show full screen, since we have quite a few plots
+    manager = plt.get_current_fig_manager()
+    manager.full_screen_toggle()
+    plt.show()
 
-num_extra_axes = axes.size - len(x_cols)
 
-if num_extra_axes > 0:
-    print(f'{num_extra_axes} extra axes/axis added')
-    for ax in axes[-1][-num_extra_axes:]:
-        fig.delaxes(ax)
-
-for i, col_name in enumerate(x_cols):
-
-    print("i:", i, "row:", row, "col:", col, col_name)
-    ax: plt.Axes = axes[row, col]
-    ax.scatter(df[[col_name]], df[[y_col]])
-    ax.set_xlabel(col_name)
-    ax.set_ylabel(y_col)
-
-    if col == 0:
-        col = 1
-    elif col == 1:
-        col = 2
-    else:
-        row += 1
-        col = 0
-
-# show full screen, since we have quite a few plots
-manager = plt.get_current_fig_manager()
-manager.full_screen_toggle()
-plt.show()
+# plot_features()
