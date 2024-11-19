@@ -50,7 +50,7 @@ def plot_features():
     col = 0
     row = 0
     fig, axes = plt.subplots(rows, cols)
-    fig.suptitle('Feature n and number of readers')
+    fig.suptitle(f'Feature n and {' '.join(y_col.split('_')).lower()}')
     # add space so you can see the titles of the axes properly
     plt.subplots_adjust(hspace=0.5, wspace=0.5)
     num_extra_axes = axes.size - len(x_cols)
