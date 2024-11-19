@@ -8,8 +8,10 @@ from sklearn.preprocessing import MinMaxScaler
 
 df = pd.read_csv('data/libraries_in_Poland.csv', sep=";")
 
-# Select features to use for input/prediction
-x_cols = ['Number_of_libraries', 'Amount_of_books', 'Number_of_loans', 'Number_of_librarians',
+scaler = MinMaxScaler()
+
+
+
 # select features to use for input/prediction
 x_cols = ['Number_of_libraries', 'Amount_of_books', 'Number_of_loans', 'Number_of_readers',
           'Number_with_accessibility_features',
@@ -21,9 +23,8 @@ y_col = 'Number_of_librarians'
 X = df[x_cols]
 y = df[[y_col]]
 
-# get input (x) and output (y)
-libraries_x = df[x_cols]
-libraries_y = df[[y_col]]
+# TODO: use scaling on inputs (use scaled input in model)
+print(scaler.fit(X), scaler.data_max_, scaler.data_min_, scaler.data_range_)
 
 # creating train and test sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=101)
