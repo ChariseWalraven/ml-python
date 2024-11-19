@@ -1,0 +1,6 @@
+Number_of_readers v Number_of_librarians
+Coefficients:
+ [[0.00299632]]
+Mean squared error: 15045.39
+Mean absolute error: 91.29
+Coefficient of determination (r2 score): 0.78
