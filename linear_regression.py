@@ -10,8 +10,6 @@ df = pd.read_csv('data/libraries_in_Poland.csv', sep=";")
 
 scaler = MinMaxScaler()
 
-
-
 # select features to use for input/prediction
 x_cols = ['Number_of_libraries', 'Amount_of_books', 'Number_of_loans', 'Number_of_readers',
           'Number_with_accessibility_features',
@@ -36,12 +34,17 @@ regression_model.fit(X_train, y_train)
 libraries_y_predictions = regression_model.predict(X_test)
 
 # coefficients are the m's in the mx + b formula. They tell us what features are more important,
-# given the absolute size of the coefficients.
+# given the absolute size of the coefficients. Bigger = more important.
 print("Coefficients: \n", regression_model.coef_)
-# how wrong the results are
+# how wrong the results are. The scale is relative to the scale of the y value. E.g. with number of readers v number of
+# librarians, the mean squared and mean absolute errors were 15045.39 and 91.29 respectively. The number of librarians
+# ranges from about 500 to 2500. A mean absolute error of 91.29 is pretty small compared to that.
+# the mean squared error is larger because it's squared. To find the scale, take the root of the error value (~46.46).
+# That's also pretty small compared to the scale.
 print("Mean squared error: %.2f" % mean_squared_error(y_test, libraries_y_predictions))
 print("Mean absolute error: %.2f" % mean_absolute_error(y_test, libraries_y_predictions))
-# how accurate the predictions are
+# how accurate the predictions are. Not super helpful for linear regression, more helpful for logistic regression. I think.
+# not sure exactly what it means.
 print("Coefficient of determination (r2 score): %.2f" % r2_score(y_test, libraries_y_predictions))
 
 
@@ -77,6 +80,5 @@ def plot_features():
     manager.full_screen_toggle()
     plt.show()
 
-# plot_features()
 
-# ...Wat -> https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlTN62y0Ov_gXsyBmxbWT1RE2E4Bul7ZPZuA&s
+plot_features()
